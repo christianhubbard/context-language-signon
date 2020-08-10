@@ -12,13 +12,28 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import {LanguageContext} from './contexts/LanguageContext'
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from './styles/FormStyles';
 
+const words = {
+    english: {
+        email: "Email",
+    },
+    french:{
+        email : "Adresse Electronique"
+    },
+    spanish: {
+        email: "Correo Electronico"
+    }
+}
 class Form extends Component {
+    static contextType = LanguageContext
     render() {
+        const {language} = this.context;
         const {classes} = this.props;
+        const {email} = words[language]
         return (
             <main className={classes.main}>
                 <Paper className={classes.paper}>
@@ -35,7 +50,7 @@ class Form extends Component {
                     </Select>
                     <form className={classes.form}>
                         <FormControl margin='normal' required fullWidth>
-                            <InputLabel htmlFor='email'>Email</InputLabel>
+                            <InputLabel htmlFor='email'>{email}</InputLabel>
                             <Input id='email' name='email' autoFocus />
                         </FormControl>
                         <FormControl margin='normal' required fullWidth>
