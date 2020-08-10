@@ -8,10 +8,10 @@ import {ThemeProvider} from './contexts/ThemeContext'
 function App() {
   return (
     <ThemeProvider>
-    <PageContent>
-      <Navbar />
-      <Form />
-    </ PageContent >
+      <PageContent>
+        <Navbar />
+        <Form />
+      </PageContent>
     </ThemeProvider>  
   );
 }

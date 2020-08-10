@@ -10,10 +10,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import { withStyles } from "@material-ui/core/styles";
 import styles from './styles/NavBarStyles'
 
-
+import { ThemeContext } from './contexts/ThemeContext';
 
 class Navbar extends Component {
+    static contextType = ThemeContext;
     render() {
+        console.log(this.context);
         const {classes} = this.props;
         return (
             <div className={classes.root}>
