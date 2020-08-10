@@ -19,21 +19,30 @@ import styles from './styles/FormStyles';
 
 const words = {
     english: {
+        signIn: "Sign In",
         email: "Email",
+        password: "Password",
+        remember: "Remember Me"
     },
     french:{
-        email : "Adresse Electronique"
+        signIn: "Se Connecter",
+        email : "Adresse Électronique",
+        password: "Mot de Passe",
+        remember: "Souviens-toi De Moi"
     },
     spanish: {
-        email: "Correo Electronico"
-    }
+        signIn: "Registrarse",
+        email: "Correo Electrónico",
+        password: "Contraseña",
+        remember: "Recuérdame"
+    },
 }
 class Form extends Component {
     static contextType = LanguageContext
     render() {
         const {language} = this.context;
         const {classes} = this.props;
-        const {email} = words[language]
+        const {email, signIn, password, remember} = words[language]
         return (
             <main className={classes.main}>
                 <Paper className={classes.paper}>
@@ -41,7 +50,7 @@ class Form extends Component {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography variant='h5'>
-                        Sign In
+                        {signIn}
                     </Typography>
                     <Select value='English'>
                         <MenuItem value='English'>English</MenuItem>
@@ -54,10 +63,10 @@ class Form extends Component {
                             <Input id='email' name='email' autoFocus />
                         </FormControl>
                         <FormControl margin='normal' required fullWidth>
-                            <InputLabel htmlFor='password'>Password</InputLabel>
+                            <InputLabel htmlFor='password'>{password}</InputLabel>
                             <Input id='password' name='password' autoFocus />
                         </FormControl>
-                        <FormControlLabel control={<Checkbox color='primary' />} label='Remember Me'/>
+                        <FormControlLabel control={<Checkbox color='primary' />} label={remember}/>
                         <Button 
                             variant='contained' 
                             type='submit' 
@@ -65,7 +74,7 @@ class Form extends Component {
                             color='primary' 
                             className={classes.submit}
                         >
-                            Sign In
+                            {signIn}
                         </Button>
                     </form>
                 </Paper>
