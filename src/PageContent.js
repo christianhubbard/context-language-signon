@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class PageContent extends Component {
     render() {
         const styles={
-            backgroundColor: 'red',
+            backgroundColor: 'white',
             height: '100vh',
             width: '100vw',
         }
