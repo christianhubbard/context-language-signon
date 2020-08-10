@@ -40,7 +40,7 @@ const words = {
 class Form extends Component {
     static contextType = LanguageContext
     render() {
-        const {language} = this.context;
+        const {language, changeLanguage} = this.context;
         const {classes} = this.props;
         const {email, signIn, password, remember} = words[language]
         return (
@@ -52,10 +52,10 @@ class Form extends Component {
                     <Typography variant='h5'>
                         {signIn}
                     </Typography>
-                    <Select value='English'>
-                        <MenuItem value='English'>English</MenuItem>
-                        <MenuItem value='French'>French</MenuItem>
-                        <MenuItem value='Spanish'>Spanish</MenuItem>
+                    <Select value={language} onChange={changeLanguage}>
+                        <MenuItem value='english'>English</MenuItem>
+                        <MenuItem value='french'>French</MenuItem>
+                        <MenuItem value='spanish'>Spanish</MenuItem>
                     </Select>
                     <form className={classes.form}>
                         <FormControl margin='normal' required fullWidth>
