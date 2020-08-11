@@ -8,9 +8,5 @@ export default function PageContent (props) {
         height: '100vh',
         width: '100vw',
     }
-    return (
-        <div style={styles}>
-            {props.children}
-        </div>
-    )
+    return (<div style={styles}>{props.children}</div>)
 }
