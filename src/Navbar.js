@@ -11,6 +11,7 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from './styles/NavBarStyles'
 
 import { ThemeContext } from './contexts/ThemeContext';
+import { LanguageContext } from './contexts/LanguageContext';
 
 class Navbar extends Component {
     static contextType = ThemeContext;
